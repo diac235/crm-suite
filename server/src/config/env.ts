@@ -20,8 +20,9 @@ const booleanish = z
 const schema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().int().positive().default(4000),
-  h: z.string().default('http://localhost:5173',https://crm-suite-frontend.vercel.apph),
+  FRONTEND_URL: z.string().default('https://crm-suite-frontend.vercel.app'),
   APP_URL: z.string().url().default('http://localhost:5173'),
+  CORS_ORIGIN: z.string().default('http://localhost:5173,https://crm-suite-frontend.vercel.app'),
 
   DATABASE_URL: z.string().min(1, 'DATABASE_URL es obligatorio'),
 
