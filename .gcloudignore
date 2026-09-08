@@ -1,0 +1,13 @@
+# Archivos que no deben subirse a Cloud Build al desplegar
+.git
+.gitignore
+node_modules/
+**/node_modules/
+server/dist/
+web/dist/
+server/storage/
+**/.env
+**/.env.test
+.firebaserc
+docs/
+*.md
