@@ -24,7 +24,7 @@ export const ALLOWED_MIME_TYPES: Record<string, string> = {
 };
 
 export function ensureStorageDir(): void {
-  fs.mkdirSync(env.storageDir, { recursive: true });
+  fs.mkdirSync('/tmp', { recursive: true });
 }
 
 const storage = multer.diskStorage({
