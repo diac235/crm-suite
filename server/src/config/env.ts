@@ -2,7 +2,7 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+dotenv.config({ path: path.resolve(process.cwd(), '.env'), override: false });
 
 const booleanish = z
   .union([z.boolean(), z.string()])
