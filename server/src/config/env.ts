@@ -46,7 +46,13 @@ if (!parsed.success) {
 }
 
 const raw = parsed.data;
-
+   // Asegurar que el directorio de almacenamiento existe
+   try {
+     const fs = require('fs');
+     fs.mkdirSync(raw.STORAGE_DIR, { recursive: true });
+   } catch (e) {
+     // Ignorar errores si el directorio ya existe
+   }
 export const env = {
   ...raw,
   isProduction: raw.NODE_ENV === 'production',
