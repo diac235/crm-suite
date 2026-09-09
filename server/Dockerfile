@@ -1,5 +1,6 @@
 # ---- Compilación ----------------------------------------------------------
 FROM node:20-alpine AS build
+# Force rebuild
 WORKDIR /app
 
 COPY package.json package-lock.json ./
